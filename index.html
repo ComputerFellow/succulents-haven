@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Succulent Haven | Project Details</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Succulent Haven | Project Details</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <style>
         :root {
             --primary: #4a7c59;
             --primary-light: #6d9d78;
@@ -324,6 +324,10 @@
             height: 350px;
         }
         
+        .gallery-item.main.vertical {
+            height: 450px;
+        }
+        
         /* Plants Used */
         .plants-section {
             background-color: var(--light-gray);
@@ -629,385 +633,520 @@
         #vertical-tab .btn {
             justify-content: center;
         }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="#" class="logo">
-                <i class="fas fa-leaf"></i>
-                Succulent Haven
-            </a>
-            
-            <div class="mobile-toggle" id="mobileToggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            
-            <nav id="nav">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        /* stack the cards vertically below 768 px */
+        /* default: two columns */
+        #vertical-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
 
-    <!-- Tab Navigation -->
-    <div class="section" style="padding: 100px 0 40px;">
-        <div class="container">
-            <div class="tabs">
-                <button class="tab-btn active" data-tab="desert">Desert Garden Project</button>
-                <button class="tab-btn" data-tab="vertical">Vertical Gardens</button>
-            </div>
-        </div>
-    </div>
+        /* phones: one column */
+        @media (max-width: 1280px) {
+            #vertical-cards {
+                grid-template-columns: 1fr;          /* stack */
+                justify-items: center;               /* centre the cards horizontally */
+            }
 
-    <!-- Desert Garden Project -->
-    <div class="tab-content active" id="desert-tab">
-        <!-- Hero Section -->
-        <!-- <section class="project-hero" style="background: url('https://images.unsplash.com/photo-1700966139909-f9e7cb253d4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwyfHxjYWN0dXMlMjBnYXJkZW58ZW58MHx8fHwxNzUyMTYzMDA1fDA&ixlib=rb-4.1.0&q=80&w=3080') center/cover no-repeat;"> -->
-        <section class="project-hero" style="background: url('https://images.unsplash.com/photo-1516417156595-3ca5df62a3a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwyNXx8ZGVzZXJ0fGVufDB8fHx8MTc1MjA5NDE2NHww&ixlib=rb-4.1.0&q=80&w=2080') center/cover no-repeat;">
-        <!-- <section class="project-hero" style="background: url('https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80') center/cover no-repeat;"> -->
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1>Desert Garden Project</h1>
-                <p>Creating sustainable desert landscapes using native succulents and cacti</p>
-                <a href="#details" class="btn">Explore Project</a>
-            </div>
-        </section>
-
-        <!-- Project Details -->
-        <section class="section" id="details">
-            <div class="container" id="desert-about">
-                <div class="project-details">
-                    <div class="project-info">
-                        <h3>About the Project</h3>
-                        <p>The Desert Garden Project transforms arid landscapes into thriving ecosystems using native succulent species. Our approach focuses on water conservation and biodiversity, creating beautiful yet sustainable environments that require minimal maintenance.</p>
-                        <p>This project began in 2020 in Southern California and has since expanded to five different desert communities. We've successfully converted over 50,000 square feet of traditional lawns into water-wise succulent gardens, saving millions of gallons of water annually.</p>
-                        
-                        <div class="project-stats">
-                            <div class="stat-card">
-                                <i class="fas fa-tint"></i>
-                                <h4>Water Savings</h4>
-                                <p>85% Reduction</p>
-                            </div>
-                            <div class="stat-card">
-                                <i class="fas fa-seedling"></i>
-                                <h4>Species Planted</h4>
-                                <p>42 Varieties</p>
-                            </div>
-                            <div class="stat-card">
-                                <i class="fas fa-ruler-combined"></i>
-                                <h4>Area Covered</h4>
-                                <p>50,000+ sq ft</p>
-                            </div>
-                            <div class="stat-card">
-                                <i class="fas fa-calendar-alt"></i>
-                                <h4>Project Duration</h4>
-                                <p>3 Years</p>
-                            </div>
-                        </div>
-                        
-                        <a href="#contact" class="btn">Schedule Consultation</a>
-                    </div>
-                    
-                    <div class="project-gallery">
-                        <div class="gallery-item main">
-                            <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076&q=80" alt="Desert garden pathway">
-                            <!-- <img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Desert garden landscape"> -->
-                            <!-- <img src="https://images.unsplash.com/photo-1460627390041-532a28402358?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwxOXx8c3Vuc2V0fGVufDB8fHx8MTc1MjA5MjczMnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Desert garden landscape"> -->
-                        </div>
-                        <div class="gallery-item">
-                            <img src="https://images.unsplash.com/photo-1531517765038-ee4843469fd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Succulent close-up">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="https://images.unsplash.com/photo-1614459982903-a83c12d1502a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwyMnx8Y2FjdHVzJTIwZ2FyZGVufGVufDB8fHx8MTc1MjE2MzAwNXww&ixlib=rb-4.1.0&q=80&w=2080" alt="Desert garden landscape">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Plants Used -->
-        <section class="section plants-section">
-            <div class="container" id="desert-projects">
-                <div class="section-title">
-                    <h2>Featured Plants</h2>
-                </div>
+            /* every card (or the flex box inside) stays 480 px wide – tweak to taste */
+            #vertical-cards .plant-card,
+            #vertical-cards .plant-card > div {    /* the flex container you already use */
+                width: clamp(100px, 90vw, 580px);   /* 300 ≤ width ≤ 480, scales in-between */                      /* fixed width */
+                max-width: 100%;                     /* but still shrink on very small phones */
                 
-                <div class="plants-grid">
-                    <div class="plant-card">
-                        <div class="plant-img">
-                            <img src="https://images.unsplash.com/photo-1694923963403-2443a0215818?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwzMHx8YWdhdmV8ZW58MHx8fHwxNzUyMDkyNDM5fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Agave">
-                            <!-- <img src="https://images.unsplash.com/photo-1598880940080-ff9a29891b85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Agave"> -->
-                        </div>
-                        <div class="plant-info">
-                            <h4>Agave Americana</h4>
-                            <p>Large, dramatic succulent with blue-green leaves that form a perfect rosette shape. Drought-tolerant and perfect for xeriscaping.</p>
-                            <div class="plant-specs">
-                                <span>Full Sun</span>
-                                <span>Low Water</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="plant-card">
-                        <div class="plant-img">
-                            <img src="https://images.unsplash.com/photo-1554147799-059bd56ee771?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwxNXx8YWxvZSUyMHZlcmF8ZW58MHx8fHwxNzUyMDkyMDAwfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Aloe Vera">
-                        </div>
-                        <div class="plant-info">
-                            <h4>Aloe Vera</h4>
-                            <p>Medicinal succulent with fleshy green leaves. Known for its healing properties and beautiful yellow flowers in spring.</p>
-                            <div class="plant-specs">
-                                <span>Partial Sun</span>
-                                <span>Low Water</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="plant-card">
-                        <div class="plant-img">
-                            <img src="https://images.unsplash.com/photo-1657988149309-b9d63475d553?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwyM3x8ZWNoZXZlcmlhfGVufDB8fHx8MTc1MjA5MjQ5NXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Echeveria">
-                        </div>
-                        <div class="plant-info">
-                            <h4>Echeveria 'Lola'</h4>
-                            <p>Beautiful rosette-forming succulent with lavender-pink leaves. Ideal for adding color contrast to desert gardens.</p>
-                            <div class="plant-specs">
-                                <span>Full Sun</span>
-                                <span>Low Water</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="plant-card">
-                        <div class="plant-img">
-                            <img src="https://images.unsplash.com/photo-1655276664441-bb7f78eb048d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwyN3x8YmFycmVsJTIwY2FjdHVzfGVufDB8fHx8MTc1MjA5MjU2OXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Barrel Cactus">
-                        </div>
-                        <div class="plant-info">
-                            <h4>Golden Barrel Cactus</h4>
-                            <p>Spherical cactus with prominent ribs adorned with golden spines. Produces yellow flowers in summer months.</p>
-                            <div class="plant-specs">
-                                <span>Full Sun</span>
-                                <span>Very Low Water</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+                /* box-sizing: border-box; */
+            }
+        }
+        /* Optional: visually zoom out instead of overflowing */
+        @media (max-width: 600px) {
+        #vertical-cards {
+            transform: scale(0.8);
+            transform-origin: top center;
+        }
 
-    <!-- Vertical Gardens Project -->
-    <div class="tab-content" id="vertical-tab">
-        <!-- Hero Section -->
-        <section class="project-hero" style="background: url('https://images.unsplash.com/photo-1519393085459-be21f89585f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwxN3x8dmVydGljYWwlMjBnYXJkZW58ZW58MHx8fHwxNzUyMDkyODMyfDA&ixlib=rb-4.1.0&q=80&w=2080') center/cover no-repeat;">
-        <!-- <section class="project-hero" style="background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1973&q=80') center/cover no-repeat;"> -->
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1>Vertical Gardens</h1>
-                <p>Transforming urban spaces with living walls of diverse succulent species</p>
-                <a href="#details" class="btn">Explore Project</a>
-            </div>
-        </section>
-
-        <!-- Project Details -->
-        <section class="section" id="details">
-            <div class="container" id="vertical-about">
-                <div class="project-details">
-                    <div class="project-info">
-                        <h3>About the Project</h3>
-                        <p>Our Vertical Gardens project brings nature to urban environments through innovative living wall systems. These installations feature carefully selected succulent species that thrive in vertical arrangements, creating stunning natural artwork while improving air quality.</p>
-                        <p>Each vertical garden is custom-designed for its location, considering sunlight exposure, climate, and architectural context. Our patented irrigation system ensures efficient water use while maintaining plant health. These living walls have transformed office buildings, restaurants, and residential spaces across the city.</p>
-                        
-                        <div class="project-stats">
-                            <div class="stat-card">
-                                <i class="fas fa-building"></i>
-                                <h4>Installations</h4>
-                                <p>24 Locations</p>
-                            </div>
-                            <div class="stat-card">
-                                <i class="fas fa-leaf"></i>
-                                <h4>Plants Used</h4>
-                                <p>15,000+ Plants</p>
-                            </div>
-                            <div class="stat-card">
-                                <i class="fas fa-ruler-vertical"></i>
-                                <h4>Largest Wall</h4>
-                                <p>450 sq ft</p>
-                            </div>
-                            <div class="stat-card">
-                                <i class="fas fa-recycle"></i>
-                                <h4>Water System</h4>
-                                <p>90% Recycled</p>
-                            </div>
-                        </div>
-                        
-                        <a href="#contact" class="btn">Get a Quote</a>
-                    </div>
-                    
-                    <div class="project-gallery">
-                        <div class="gallery-item main">
-                            <img src="https://mountaincrestgardens.com/product_images/uploaded_images/week-1-ashley.jpg" alt="Vertical garden in office">
-                            <!-- <img src="https://images.unsplash.com/uploads/1411901100260f56b39b9/ab70b250?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwxMnx8Z2FyZGVufGVufDB8fHx8MTc1MjA5MjkwNnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Vertical garden in office"> -->
-                        </div>
-                        <div class="gallery-item">
-                            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwyOXx8Z2FyZGVufGVufDB8fHx8MTc1MjA5MjkwNnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Vertical garden close-up">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="https://images.unsplash.com/photo-1713455645544-cf9d2a0d213a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHw3fHxhcnRpc3RpYyUyMHBlbmNpbHxlbnwwfHx8fDE3NTIxNzYwODl8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Vertical garden design">
-                            <!-- <img src="https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Vertical garden design"> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Plants Used -->
-        <section class="section plants-section">
-            <div class="container" id="vertical-projects">
-                <div class="section-title">
-                    <h2>Featured Plants</h2>
-                </div>
-                
-                <div class="plants-grid">
-                    <div class="plant-card">
-                        <div class="plant-img">
-                            <img src="https://images.unsplash.com/photo-1648070024741-43f8fa965966?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwyfHxzdHJpbmclMjBvZiUyMHBlYXJsc3xlbnwwfHx8fDE3NTIwOTI2NDB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="String of Pearls">
-                        </div>
-                        <div class="plant-info">
-                            <h4>String of Pearls</h4>
-                            <p>Trailing succulent with bead-like leaves. Perfect for vertical gardens as it cascades beautifully over edges.</p>
-                            <div class="plant-specs">
-                                <span>Bright Indirect</span>
-                                <span>Moderate Water</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="plant-card">
-                        <div class="plant-img">
-                            <img src="https://images.unsplash.com/photo-1610473289858-19b90d2c7e8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHw1fHxidXJybyUyN3MlMjB0YWlsfGVufDB8fHx8MTc1MjA5MjA3MHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Burro's Tail">
-                        </div>
-                        <div class="plant-info">
-                            <h4>Burro's Tail</h4>
-                            <p>Trailing succulent with plump, blue-green leaves that resemble a braided tail. Adds beautiful texture to vertical installations.</p>
-                            <div class="plant-specs">
-                                <span>Partial Sun</span>
-                                <span>Low Water</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="plant-card">
-                        <div class="plant-img">
-                            <img src="https://images.unsplash.com/photo-1535323584180-2a09e330cd8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHw5fHxFY2hldmVyaWF8ZW58MHx8fHwxNzUyMDkyMDE0fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Echeveria">
-                        </div>
-                        <div class="plant-info">
-                            <h4>Echeveria 'Perle von Nurnberg'</h4>
-                            <p>Stunning rosette succulent with pastel purple leaves. A favorite for adding color to vertical arrangements.</p>
-                            <div class="plant-specs">
-                                <span>Full Sun</span>
-                                <span>Low Water</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="plant-card">
-                        <div class="plant-img">
-                            <!-- <img src="https://images.unsplash.com/photo-1592409065737-a25380a0c7b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Haworthia"> -->
-                            <img src="https://images.unsplash.com/photo-1630589947083-13749d8533a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHw1fHxIYXdvcnRoaWF8ZW58MHx8fHwxNzUyMDkyMTAxfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Haworthia">
-                        </div>
-                        <div class="plant-info">
-                            <h4>Haworthia Zebra</h4>
-                            <p>Small succulent with striking white striped pattern. Thrives in vertical gardens with indirect light conditions.</p>
-                            <div class="plant-specs">
-                                <span>Low Light</span>
-                                <span>Low Water</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Project Navigation -->
-    <section class="project-nav">
-        <div class="container">
-            <div class="section-title">
-                <h2>Explore Other Projects</h2>
-            </div>
-            <div class="nav-links">
-                <a href="#" class="nav-card">
-                    <img src="https://www.thespruce.com/thmb/64TKqXY7ZsMY7rU8x4PwvBSlG60=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/terravivadesign_66390229_1089808711230274_4419135553010770292_n-39558a1c0bb14cf297c89ca04963f143.jpg" alt="Terrarium Designs">
-                    <!-- <img src="https://images.unsplash.com/photo-1564466809058-3c4c1f134980?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Terrarium Designs"> -->
-                    <h4>Terrarium Designs</h4>
+        body {
+            overflow-x: hidden;
+        }
+        }
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <div class="container header-container">
+                <a href="#" class="logo">
+                    <i class="fas fa-leaf"></i>
+                    Succulent Haven
                 </a>
-                <a href="#" class="nav-card">
-                    <img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" alt="Office Greening">
-                    <!-- <img src="https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Office Greening"> -->
-                    <h4>Office Greening</h4>
-                </a>
+                <div class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav id="nav">
+                    <ul>
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li>
+                            <a href="#projects">Projects</a>
+                        </li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- Tab Navigation -->
+        <div class="section" style="padding: 100px 0 40px;">
+            <div class="container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="desert">Desert Garden Project</button>
+                    <button class="tab-btn" data-tab="vertical">Vertical Gardens</button>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container" id="contact">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Succulent Haven</h3>
-                    <p>Bringing the beauty of resilient nature into your home and life through sustainable succulent cultivation and innovative plant designs.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
+        <!-- Desert Garden Project -->
+        <div class="tab-content active" id="desert-tab">
+            <!-- Hero Section -->
+            <!-- <section class="project-hero" style="background: url('https://images.unsplash.com/photo-1700966139909-f9e7cb253d4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwyfHxjYWN0dXMlMjBnYXJkZW58ZW58MHx8fHwxNzUyMTYzMDA1fDA&ixlib=rb-4.1.0&q=80&w=3080') center/cover no-repeat;"> -->
+            <section class="project-hero" style="background: url('https://images.unsplash.com/photo-1516417156595-3ca5df62a3a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwyNXx8ZGVzZXJ0fGVufDB8fHx8MTc1MjA5NDE2NHww&ixlib=rb-4.1.0&q=80&w=2080') center/cover no-repeat;">
+                <!-- <section class="project-hero" style="background: url('https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80') center/cover no-repeat;"> -->
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1>Desert Garden Project</h1>
+                    <p>Creating sustainable desert landscapes using native succulents and cacti</p>
+                    <a href="#details" class="btn">Explore Project</a>
+                </div>
+            </section>
+            <!-- Project Details -->
+            <section class="section" id="details">
+                <div class="container" id="desert-about">
+                    <div class="project-details">
+                        <div class="project-info">
+                            <h3>About the Project</h3>
+                            <p>The Desert Garden Project transforms arid landscapes into thriving ecosystems using native succulent species. Our approach focuses on water conservation and biodiversity, creating beautiful yet sustainable environments that require minimal maintenance.</p>
+                            <p>This project began in 2020 in Southern California and has since expanded to five different desert communities. We've successfully converted over 50,000 square feet of traditional lawns into water-wise succulent gardens, saving millions of gallons of water annually.</p>
+                            <div class="project-stats">
+                                <div class="stat-card">
+                                    <i class="fas fa-tint"></i>
+                                    <h4>Water Savings</h4>
+                                    <p>85% Reduction</p>
+                                </div>
+                                <div class="stat-card">
+                                    <i class="fas fa-seedling"></i>
+                                    <h4>Species Planted</h4>
+                                    <p>42 Varieties</p>
+                                </div>
+                                <div class="stat-card">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <h4>Area Covered</h4>
+                                    <p>50,000+ sq ft</p>
+                                </div>
+                                <div class="stat-card">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <h4>Project Duration</h4>
+                                    <p>3 Years</p>
+                                </div>
+                            </div>
+                            <a href="#contact" class="btn">Schedule Consultation</a>
+                        </div>
+                        <div class="project-gallery">
+                            <div class="gallery-item main">
+                                <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076&q=80" alt="Desert garden pathway">
+                                <!-- <img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Desert garden landscape"> -->
+                                <!-- <img src="https://images.unsplash.com/photo-1460627390041-532a28402358?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwxOXx8c3Vuc2V0fGVufDB8fHx8MTc1MjA5MjczMnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Desert garden landscape"> -->
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1531517765038-ee4843469fd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Succulent close-up">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1614459982903-a83c12d1502a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwyMnx8Y2FjdHVzJTIwZ2FyZGVufGVufDB8fHx8MTc1MjE2MzAwNXww&ixlib=rb-4.1.0&q=80&w=2080" alt="Desert garden landscape">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#">Care Guide</a></li>
-                    </ul>
+            </section>
+            <!-- Plants Used -->
+            <section class="section plants-section">
+                <div class="container" id="desert-projects">
+                    <div class="section-title">
+                        <h2>Featured Plants</h2>
+                    </div>
+                    <div class="plants-grid">
+                        <div class="plant-card">
+                            <div class="plant-img">
+                                <img src="https://images.unsplash.com/photo-1694923963403-2443a0215818?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwzMHx8YWdhdmV8ZW58MHx8fHwxNzUyMDkyNDM5fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Agave">
+                                <!-- <img src="https://images.unsplash.com/photo-1598880940080-ff9a29891b85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Agave"> -->
+                            </div>
+                            <div class="plant-info">
+                                <h4>Agave Americana</h4>
+                                <p>Large, dramatic succulent with blue-green leaves that form a perfect rosette shape. Drought-tolerant and perfect for xeriscaping.</p>
+                                <div class="plant-specs">
+                                    <span>Full Sun</span>
+                                    <span>Low Water</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plant-card">
+                            <div class="plant-img">
+                                <img src="https://images.unsplash.com/photo-1554147799-059bd56ee771?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwxNXx8YWxvZSUyMHZlcmF8ZW58MHx8fHwxNzUyMDkyMDAwfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Aloe Vera">
+                            </div>
+                            <div class="plant-info">
+                                <h4>Aloe Vera</h4>
+                                <p>Medicinal succulent with fleshy green leaves. Known for its healing properties and beautiful yellow flowers in spring.</p>
+                                <div class="plant-specs">
+                                    <span>Partial Sun</span>
+                                    <span>Low Water</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plant-card">
+                            <div class="plant-img">
+                                <img src="https://images.unsplash.com/photo-1657988149309-b9d63475d553?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwyM3x8ZWNoZXZlcmlhfGVufDB8fHx8MTc1MjA5MjQ5NXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Echeveria">
+                            </div>
+                            <div class="plant-info">
+                                <h4>Echeveria 'Lola'</h4>
+                                <p>Beautiful rosette-forming succulent with lavender-pink leaves. Ideal for adding color contrast to desert gardens.</p>
+                                <div class="plant-specs">
+                                    <span>Full Sun</span>
+                                    <span>Low Water</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plant-card">
+                            <div class="plant-img">
+                                <img src="https://images.unsplash.com/photo-1655276664441-bb7f78eb048d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwyN3x8YmFycmVsJTIwY2FjdHVzfGVufDB8fHx8MTc1MjA5MjU2OXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Barrel Cactus">
+                            </div>
+                            <div class="plant-info">
+                                <h4>Golden Barrel Cactus</h4>
+                                <p>Spherical cactus with prominent ribs adorned with golden spines. Produces yellow flowers in summer months.</p>
+                                <div class="plant-specs">
+                                    <span>Full Sun</span>
+                                    <span>Very Low Water</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Projects</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Desert Gardens</a></li>
-                        <li><a href="#">Vertical Installations</a></li>
-                        <li><a href="#">Terrarium Designs</a></li>
-                        <li><a href="#">Office Greening</a></li>
-                        <li><a href="#">Sustainable Landscapes</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p>123 Plant Street, Botanica, CA 90210</p>
-                    <p>info@succulenthaven.com</p>
-                    <p>(555) 123-4567</p>
-                    <a href="#contact" class="btn btn-secondary" style="margin-top: 15px;">Get in Touch</a>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2023 Succulent Haven. All rights reserved. Designed with <i class="fas fa-heart" style="color: #d4a373;"></i> for plant lovers.</p>
-            </div>
+            </section>
         </div>
-    </footer>
-
-    <script>
+        <!-- Vertical Gardens Project -->
+        <!-- Vertical Gardens Project -->
+        <div class="tab-content" id="vertical-tab">
+            <!-- Hero Section - Compact -->
+            <section class="project-hero" style="background: url('https://images.unsplash.com/photo-1519393085459-be21f89585f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwxN3x8dmVydGljYWwlMjBnYXJkZW58ZW58MHx8fHwxNzUyMDkyODMyfDA&ixlib=rb-4.1.0&q=80&w=2080') center/cover no-repeat; height: 50vh;">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1>Vertical Gardens</h1>
+                    <p>Transforming urban spaces with living walls</p>
+                </div>
+            </section>
+            <!-- Stats Banner -->
+            <section style="background: var(--primary); color: white; padding: 40px 0;">
+                <div class="container">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center;">
+                        <div>
+                            <i class="fas fa-building" style="font-size: 2.5rem; margin-bottom: 10px; color: var(--sand);"></i>
+                            <h3 style="font-size: 2rem; margin-bottom: 5px;">24</h3>
+                            <p style="font-size: 1rem; opacity: 0.9;">Installations</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-leaf" style="font-size: 2.5rem; margin-bottom: 10px; color: var(--sand);"></i>
+                            <h3 style="font-size: 2rem; margin-bottom: 5px;">15,000+</h3>
+                            <p style="font-size: 1rem; opacity: 0.9;">Plants Used</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-ruler-vertical" style="font-size: 2.5rem; margin-bottom: 10px; color: var(--sand);"></i>
+                            <h3 style="font-size: 2rem; margin-bottom: 5px;">450 sq ft</h3>
+                            <p style="font-size: 1rem; opacity: 0.9;">Largest Wall</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-recycle" style="font-size: 2.5rem; margin-bottom: 10px; color: var(--sand);"></i>
+                            <h3 style="font-size: 2rem; margin-bottom: 5px;">90%</h3>
+                            <p style="font-size: 1rem; opacity: 0.9;">Water Recycled</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Full Width Image with Overlay Text -->
+            <section style="position: relative; height: 60vh; overflow: hidden;" id="vertical-about">
+                <img src="https://mountaincrestgardens.com/product_images/uploaded_images/week-1-ashley.jpg" alt="Vertical garden installation" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to right, rgba(74, 124, 89, 0.95) 0%, rgba(74, 124, 89, 0.7) 50%, transparent 100%); display: flex; align-items: center;">
+                    <div class="container">
+                        <div style="max-width: 500px; color: white;">
+                            <h2 style="font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;">Living Walls, Breathing Spaces</h2>
+                            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">Our Vertical Gardens project brings nature to urban environments through innovative living wall systems. These installations feature carefully selected succulent species that thrive in vertical arrangements, creating stunning natural artwork while improving air quality.</p>
+                            <a href="#contact" class="btn" style="background: white; color: var(--primary);">Get a Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Process Timeline -->
+            <section class="section" style="background: var(--light-gray);">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Our Process</h2>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 40px;">
+                        <div style="text-align: center;">
+                            <div style="width: 80px; height: 80px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2rem; color: white; font-weight: bold;">1</div>
+                            <h4 style="color: var(--primary); margin-bottom: 15px; font-size: 1.3rem;">Consultation</h4>
+                            <p style="color: var(--gray);">We assess your space, lighting, and design preferences to create a custom plan.</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 80px; height: 80px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2rem; color: white; font-weight: bold;">2</div>
+                            <h4 style="color: var(--primary); margin-bottom: 15px; font-size: 1.3rem;">Design</h4>
+                            <p style="color: var(--gray);">Our team creates detailed 3D renderings of your future living wall installation.</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 80px; height: 80px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2rem; color: white; font-weight: bold;">3</div>
+                            <h4 style="color: var(--primary); margin-bottom: 15px; font-size: 1.3rem;">Installation</h4>
+                            <p style="color: var(--gray);">Professional installation with our patented irrigation and mounting systems.</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 80px; height: 80px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2rem; color: white; font-weight: bold;">4</div>
+                            <h4 style="color: var(--primary); margin-bottom: 15px; font-size: 1.3rem;">Maintenance</h4>
+                            <p style="color: var(--gray);">Optional ongoing care packages to keep your vertical garden thriving year-round.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Featured Installations Gallery -->
+            <section class="section" id="vertical-projects">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Featured Installations</h2>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                        <div style="grid-column: span 2; position: relative; overflow: hidden; border-radius: var(--border-radius); box-shadow: var(--shadow); height: 400px;">
+                            <div class="gallery-item main vertical">
+                                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwyOXx8Z2FyZGVufGVufDB8fHx8MTc1MjA5MjkwNnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Office installation" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: white;">
+                                <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Downtown Office Complex</h3>
+                                <p>300 sq ft installation featuring 50+ species</p>
+                            </div>
+                        </div>
+                        <div style="position: relative; overflow: hidden; border-radius: var(--border-radius); box-shadow: var(--shadow); height: 400px;">
+                            <div class="gallery-item main vertical">
+                                <img src="https://images.unsplash.com/photo-1713455645544-cf9d2a0d213a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHw3fHxhcnRpc3RpYyUyMHBlbmNpbHxlbnwwfHx8fDE3NTIxNzYwODl8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Restaurant wall" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: white;">
+                                <h3 style="font-size: 1.5rem; margin-bottom: 10px;">Bistro Verde</h3>
+                                <p>Restaurant feature wall</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Plant Selection - Horizontal Cards -->
+            <section class="section" style="background: var(--sand); padding: 60px 0;">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Popular Vertical Varieties</h2>
+                    </div>
+                    <!-- <div id="vertical-cards" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px;"> -->
+                    <div id="vertical-cards">
+                        <div class="plant-card">
+                            <div style="display: flex; background: white; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow); transition: var(--transition);">
+                                <div class="plant-img">
+                                    <img src="https://images.unsplash.com/photo-1648070024741-43f8fa965966?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHwyfHxzdHJpbmclMjBvZiUyMHBlYXJsc3xlbnwwfHx8fDE3NTIwOTI2NDB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="String of Pearls" style="width: 180px; object-fit: cover;">
+                                </div>
+                                <div style="padding: 20px; flex: 1;">
+                                    <h4 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 10px;">String of Pearls</h4>
+                                    <p style="color: var(--gray); margin-bottom: 15px; font-size: 0.95rem;">Cascading succulent with bead-like leaves that creates beautiful trailing effects in vertical installations.</p>
+                                    <div style="display: flex; gap: 15px; font-size: 0.85rem; color: var(--gray);">
+                                        <span>
+                                            <i class="fas fa-sun" style="color: var(--secondary);"></i>
+                                            Bright Indirect
+                                        </span>
+                                        <span>
+                                            <i class="fas fa-tint" style="color: var(--secondary);"></i>
+                                            Moderate Water
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plant-card">
+                            <div style="display: flex; background: white; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow); transition: var(--transition);">
+                                <div class="plant-img">
+                                    <img src="https://images.unsplash.com/photo-1610473289858-19b90d2c7e8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHw1fHxidXJybyUyN3MlMjB0YWlsfGVufDB8fHx8MTc1MjA5MjA3MHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Burro's Tail" style="width: 180px; object-fit: cover;">
+                                </div>
+                                <div style="padding: 20px; flex: 1;">
+                                    <h4 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 10px;">Burro's Tail</h4>
+                                    <p style="color: var(--gray); margin-bottom: 15px; font-size: 0.95rem;">Plump blue-green leaves form beautiful braided trails that add texture and dimension to vertical gardens.</p>
+                                    <div style="display: flex; gap: 15px; font-size: 0.85rem; color: var(--gray);">
+                                        <span>
+                                            <i class="fas fa-sun" style="color: var(--secondary);"></i>
+                                            Partial Sun
+                                        </span>
+                                        <span>
+                                            <i class="fas fa-tint" style="color: var(--secondary);"></i>
+                                            Low Water
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plant-card">
+                            <div style="display: flex; background: white; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow); transition: var(--transition);">
+                                <div class="plant-img">
+                                    <img src="https://images.unsplash.com/photo-1535323584180-2a09e330cd8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHw5fHxFY2hldmVyaWF8ZW58MHx8fHwxNzUyMDkyMDE0fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Echeveria" style="width: 180px; object-fit: cover;">
+                                </div>
+                                <div style="padding: 20px; flex: 1;">
+                                    <h4 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 10px;">Echeveria 'Perle von Nurnberg'</h4>
+                                    <p style="color: var(--gray); margin-bottom: 15px; font-size: 0.95rem;">Stunning pastel purple rosettes that add elegant color variation to living wall compositions.</p>
+                                    <div style="display: flex; gap: 15px; font-size: 0.85rem; color: var(--gray);">
+                                        <span>
+                                            <i class="fas fa-sun" style="color: var(--secondary);"></i>
+                                            Full Sun
+                                        </span>
+                                        <span>
+                                            <i class="fas fa-tint" style="color: var(--secondary);"></i>
+                                            Low Water
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plant-card">
+                            <div style="display: flex; background: white; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow); transition: var(--transition);">
+                                <div class="plant-img">
+                                    <img src="https://images.unsplash.com/photo-1630589947083-13749d8533a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1OTc0OTN8MHwxfHNlYXJjaHw1fHxIYXdvcnRoaWF8ZW58MHx8fHwxNzUyMDkyMTAxfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Haworthia" style="width: 180px; object-fit: cover;">
+                                </div>
+                                <div style="padding: 20px; flex: 1;">
+                                    <h4 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 10px;">Haworthia Zebra</h4>
+                                    <p style="color: var(--gray); margin-bottom: 15px; font-size: 0.95rem;">Compact succulent with striking white stripes, perfect for shaded vertical garden sections.</p>
+                                    <div style="display: flex; gap: 15px; font-size: 0.85rem; color: var(--gray);">
+                                        <span>
+                                            <i class="fas fa-sun" style="color: var(--secondary);"></i>
+                                            Low Light
+                                        </span>
+                                        <span>
+                                            <i class="fas fa-tint" style="color: var(--secondary);"></i>
+                                            Low Water
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- CTA Section -->
+            <section style="background: var(--primary); color: white; padding: 80px 0; text-align: center;">
+                <div class="container">
+                    <h2 style="font-size: 2.8rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;">Ready to Transform Your Space?</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; opacity: 0.95;">Let's create a custom vertical garden that brings life and beauty to your walls.</p>
+                    <a href="#contact" class="btn" style="background: white; color: var(--primary); font-size: 1.1rem; padding: 15px 40px;">Schedule Your Consultation</a>
+                </div>
+            </section>
+        </div>
+        <!-- Project Navigation -->
+        <section class="project-nav">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Explore Other Projects</h2>
+                </div>
+                <div class="nav-links">
+                    <a href="#" class="nav-card">
+                        <img src="https://www.thespruce.com/thmb/64TKqXY7ZsMY7rU8x4PwvBSlG60=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/terravivadesign_66390229_1089808711230274_4419135553010770292_n-39558a1c0bb14cf297c89ca04963f143.jpg" alt="Terrarium Designs">
+                        <!-- <img src="https://images.unsplash.com/photo-1564466809058-3c4c1f134980?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Terrarium Designs"> -->
+                        <h4>Terrarium Designs</h4>
+                    </a>
+                    <a href="#" class="nav-card">
+                        <img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80" alt="Office Greening">
+                        <!-- <img src="https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Office Greening"> -->
+                        <h4>Office Greening</h4>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer>
+            <div class="container" id="contact">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>Succulent Haven</h3>
+                        <p>Bringing the beauty of resilient nature into your home and life through sustainable succulent cultivation and innovative plant designs.</p>
+                        <div class="social-links">
+                            <a href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-pinterest"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#about">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#projects">Projects</a>
+                            </li>
+                            <li>
+                                <a href="#contact">Contact</a>
+                            </li>
+                            <li>
+                                <a href="#">Care Guide</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Projects</h3>
+                        <ul class="footer-links">
+                            <li>
+                                <a href="#">Desert Gardens</a>
+                            </li>
+                            <li>
+                                <a href="#">Vertical Installations</a>
+                            </li>
+                            <li>
+                                <a href="#">Terrarium Designs</a>
+                            </li>
+                            <li>
+                                <a href="#">Office Greening</a>
+                            </li>
+                            <li>
+                                <a href="#">Sustainable Landscapes</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <p>123 Plant Street, Botanica, CA 90210</p>
+                        <p>info@succulenthaven.com</p>
+                        <p>(555) 123-4567</p>
+                        <a href="#contact" class="btn btn-secondary" style="margin-top: 15px;">Get in Touch</a>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>
+                        &copy; 2023 Succulent Haven. All rights reserved. Designed with
+                        <i class="fas fa-heart" style="color: #d4a373;"></i>
+                        for plant lovers.
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <script>
     // Mobile Navigation Toggle
     const mobileToggle = document.getElementById('mobileToggle');
     const nav = document.getElementById('nav');
@@ -1082,6 +1221,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     });
-</script>
-</body>
+        </script>
+    </body>
 </html>
